@@ -28,7 +28,7 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('526172686601.dkr.ecr.us-west-2.amazonaws.com/demorepo', 'ecr:us-west-2:my.aws.credentials') {
+        docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/demorepo', 'ecr:us-west-2:my.aws.credentials') {
             docker.image("my-node-app").push()
         }
     }
