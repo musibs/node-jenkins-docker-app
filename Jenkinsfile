@@ -27,15 +27,15 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
+        docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
             //app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
 
     stage('Deploy Image') {
-        docker.withRegistry('526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
-    image = docker.image('demorepo:latest')
+        docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
+    image = docker.image('nodeapp:latest')
     image.pull()
     image.run(8000)
 }
