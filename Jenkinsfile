@@ -37,7 +37,7 @@ node {
         docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
     image = docker.image('nodeapp:latest')
     image.pull()
-    image.run()
+    image.withRun ("-p 8000:8000")
 }
     }
 }
