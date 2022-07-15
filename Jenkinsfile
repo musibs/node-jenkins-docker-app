@@ -32,4 +32,12 @@ node {
             app.push("latest")
         }
     }
+
+    stage('Deploy Image') {
+        docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/demorepo', 'ecr:us-west-2:my.aws.credentials') {
+    image = docker.image('demorepo:latest')
+    image.pull()
+    image.run()
+}
+    }
 }
