@@ -1,5 +1,5 @@
 {
-  "name": "getintodevops-hellonode",
+  "name": "Demo Node Application",
   "version": "1.0.0",
   "description": "A Hello World HTTP server",
   "main": "main.js",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/getintodevops/hellonode/"
+    "url": "https://github.com/musibs/node-jenkins-docker-app/"
   },
   "keywords": [
     "node",
     "docker",
     "dockerfile"
   ],
-  "author": "test@getintodevops.com",
+  "author": "Somnath Musib",
   "license": "ISC"
 }
