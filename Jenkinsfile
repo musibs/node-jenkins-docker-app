@@ -10,8 +10,6 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        /*app = docker.build("getintodevops/hellonode")*/
         app = docker.build("demorepo")
     }
 
@@ -30,7 +28,7 @@ node {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/demorepo', 'ecr:us-west-2:my.aws.credentials') {
-            app.push("${env.BUILD_NUMBER}")
+            //app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
     }
