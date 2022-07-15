@@ -35,9 +35,9 @@ node {
 
     stage('Deploy Image') {
         docker.withRegistry('https://526172686601.dkr.ecr.us-west-2.amazonaws.com/nodeapp', 'ecr:us-west-2:my.aws.credentials') {
-    image = docker.image('nodeapp:latest')
-    image.pull()
-    image.withRun("-p 8000:8000")
-}
+        image = docker.image('nodeapp:latest')
+        image.pull()
+        image.withRun("-p 8000:8000") {}
+        }
     }
 }
